@@ -9,13 +9,15 @@ tar -xvf phpMyAdmin-5.0.2-all-languages.tar.gz
 rm -rf phpMyAdmin-5.0.2-all-languages.tar.gz
 mv phpMyAdmin-5.0.2-all-languages /var/www/html/phpmyadmin
 mv config.inc.php /var/www/html/phpmyadmin/
+mkdir var/www/html/phpmyadmin/tmp
+chmod 777 var/www/html/phpmyadmin/tmp
 
 # setup DB
 service mysql start
 mysql -u root --skip-password < var/www/html/phpmyadmin/sql/create_tables.sql
 echo "CREATE DATABASE IF NOT EXISTS wordpress;" | mysql -u root --skip-password
-echo "CREATE USER jehong@localhost IDENTIFIED by '1111';" | mysql -u root --skip-password
-echo "GRANT ALL PRIVILEGES ON *.* to jehong@localhost;" | mysql -u root --skip-password
+echo "CREATE USER hyerkim@localhost IDENTIFIED by 'hyerkim';" | mysql -u root --skip-password
+echo "GRANT ALL PRIVILEGES ON *.* to hyerkim@localhost;" | mysql -u root --skip-password
 
 # intall wordpress
 tar -xvf latest.tar.gz

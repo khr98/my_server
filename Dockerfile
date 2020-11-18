@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
 		vim \
 		openssl \
 		mariadb-server \
-		php-mysql
+		php-mysql \
+		php-mbstring
 
 COPY /srcs/default ./etc/nginx/sites-available/
 COPY /srcs/phpMyAdmin-5.0.2-all-languages.tar.gz ./
