@@ -15,6 +15,7 @@ COPY /srcs/config.inc.php ./
 COPY /srcs/latest.tar.gz ./
 COPY /srcs/wp-config.php ./
 COPY /srcs/install.sh ./
+COPY /srcs/default_unindex ./
 
 EXPOSE 80 443
 

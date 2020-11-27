@@ -26,9 +26,6 @@ mv wordpress /var/www/html/
 chown -R www-data:www-data /var/www/html/wordpress
 mv wp-config.php /var/www/html/wordpress/
 
-# remove index for autoindexing
-rm -rf /var/www/html/index.nginx-debian.html
-
 # start services
 service php7.3-fpm start
 service nginx start
